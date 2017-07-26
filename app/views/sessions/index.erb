@@ -1,0 +1,9 @@
+<% if current_user %>
+	<%= 'Hi ' + current_user %> <br><br>
+	<%= link_to "OOOOhhhhh a secrete", secret_path %> 
+	<%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
+	  <input type=submit value='logout'>
+	<% end %> 
+<% else %>
+	<%= link_to "Login", sessions_new_path, type: 'submit' %>
+<% end %>
